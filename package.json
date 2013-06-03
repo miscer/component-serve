@@ -1,0 +1,10 @@
+{
+  "name": "component-serve",
+  "version": "0.0.1",
+  "repository": "git://github.com/miscer/component-serve.git",
+  "dependencies": {
+    "component-builder": "~0.8.2",
+    "express": "~3.2.6",
+    "commander": "~1.1.1"
+  }
+}
