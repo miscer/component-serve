@@ -1,6 +1,6 @@
 # component-serve
 
-  Development server that builds your components on every request.
+  Development server that builds your components on every request. The components are rebuilt on every request with an URL that ends with / or .html. 
 
 ## Installation
 
