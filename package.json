@@ -1,7 +1,13 @@
 {
   "name": "component-serve",
   "version": "0.0.1",
+  "description": "Development server that builds your components on every request",
+  "author": "Michal Miskernik <michal@miskernik.sk>",
+  "license": "MIT",
   "repository": "git://github.com/miscer/component-serve.git",
+  "bin": {
+    "component-serve": "./component-serve"
+  },
   "dependencies": {
     "component-builder": "~0.8.2",
     "express": "~3.2.6",
