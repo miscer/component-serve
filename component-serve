@@ -24,10 +24,11 @@ function rebuild(done) {
   builder.copyAssetsTo(program.out);
 
   builder.build(function(err, obj) {
+    if (err) return done(err);
+
     output.js = obj.require + obj.js;
     output.css = obj.css;
-
-    done(err);
+    done();
   });
 }
 
