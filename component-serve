@@ -42,7 +42,7 @@ app.use(app.router);
 app.use(express.directory(path, { icons: true }));
 app.use(express.static(path));
 
-app.get(/^\/(.+(\/|(\.html)))?$/, function(req, res, next) {
+app.get(/(\/|(\.html))$/, function(req, res, next) {
   rebuild(next);
 });
 
