@@ -24,7 +24,7 @@ function rebuild(done) {
   if (program.dev) {
     builder.development();
   }
-  
+
   builder.addSourceURLs();
   builder.prefixUrls('./');
   builder.copyAssetsTo(program.out);
@@ -63,5 +63,5 @@ app.get(prefix + '/build.css', function(req, res) {
 });
 
 app.listen(program.port, function() {
-  console.log('listening on port %d', program.port);
+  console.log('Serving on http://localhost:%d/', program.port);
 });
