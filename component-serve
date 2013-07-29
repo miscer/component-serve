@@ -9,6 +9,7 @@ var express = require('express'),
 program
   .option('-p, --port <port>', 'specify the port [3000]', 3000)
   .option('-o, --out <dir>', 'output directory [build]', 'build')
+  .option('--no-dev', 'do not build development deps')
   .parse(process.argv);
 
 var path = process.cwd();
@@ -20,7 +21,10 @@ var output = {};
 function rebuild(done) {
   var builder = new Builder(path);
 
-  builder.development();
+  if (program.dev) {
+    builder.development();
+  }
+  
   builder.addSourceURLs();
   builder.prefixUrls('./');
   builder.copyAssetsTo(program.out);
