@@ -1,6 +1,6 @@
 {
   "name": "component-serve",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Development server that builds your components on every request",
   "author": "Michal Miskernik <michal@miskernik.sk>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "component-serve": "./component-serve"
   },
   "dependencies": {
-    "component-builder": "~0.8.2",
+    "component-builder": "~0.9.0",
     "express": "~3.2.6",
     "commander": "~1.1.1"
   }
