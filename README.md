@@ -10,4 +10,20 @@
 
   In the app directory run
 
-    component serve
+```
+  # Running on localhost:3000
+  $ component serve
+
+  # Running on localhost:3030
+  $ component serve -p 3030
+
+  # Running on localhost:3000 and output at directory named `out`
+  $ component serve -o out
+
+  # Running on localhost:3000 and use component-styl builder plugin
+  $ npm install component-styl --save
+  $ component serve --use component-styl
+
+```
+
+
