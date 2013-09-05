@@ -1,12 +1,12 @@
 # component-serve
 
-  Development server that rebuilds your components on every request with an URL that ends with / or .html. 
+  Development server that rebuilds your components on every request.
 
 ## Installation
 
     npm install -g component-serve
 
-## Usage
+## CLI usage
 
   In the app directory run
 
@@ -26,4 +26,15 @@
 
 ```
 
+## Programmatic usage
 
+  It is possible to use component-serve as an Express middleware:
+
+```javascript
+  var cs = require('component-serve');
+
+  app.use('/build', cs({
+    root: process.cwd(),
+    plugins: [ require('component-jade') ]
+  }));
+```
