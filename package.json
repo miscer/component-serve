@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "git://github.com/miscer/component-serve.git",
   "bin": {
-    "component-serve": "./component-serve"
+    "component-serve": "./bin/component-serve"
   },
   "dependencies": {
     "component-builder": "~0.9.0",

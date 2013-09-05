@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var express = require('express');
+var path = require('path');
+var fs = require('fs');
+var exists = fs.existsSync || path.existsSync;
+var serve = require('../index.js');
+
+// cli
+
+program
+  .option('-p, --port <port>', 'specify the port [3000]', 3000)
+  .option('-o, --out <dir>', 'output directory [build]', 'build')
+  .option('-u, --use <name>', 'use the given build plugin(s)')
+  .option('--no-dev', 'do not build development deps')
+  .parse(process.argv);
+
+// plugins
+
+if (program.use) {
+  var plugins = program.use.split(',').map(function(name) {
+    var resolved = path.resolve(name);
+    var real = exists(resolved) || exists(resolved + '.js');
+    var module = path.resolve('node_modules', name);
+
+    return real ? require(resolved) : require(module);
+  });
+}
+
+// server
+
+var app = express();
+var dir = process.cwd();
+
+app.use('/' + program.out, serve({
+  root: dir,
+  plugins: plugins,
+  dev: program.dev
+}));
+
+app.use(express.static(dir));
+app.use(express.directory(dir, { icons: true }));
+
+app.listen(program.port, function() {
+  console.log('Serving on http://localhost:%d/', program.port);
+});
