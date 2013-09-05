@@ -1,6 +1,6 @@
 {
   "name": "component-serve",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Development server that builds your components on every request",
   "author": "Michal Miskernik <michal@miskernik.sk>",
   "license": "MIT",
