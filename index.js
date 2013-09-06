@@ -1,13 +1,14 @@
 var express = require('express');
+var Temp = require('temporary/lib/dir');
 var builder = require('./builder.js');
 
 module.exports = function(opts) {
   var router = express();
 
   opts.dev = 'dev' in opts ? opts.dev : true;
-  opts.out = router.path().substr(1);
+  opts.out = new Temp().path;
 
-  router.use(express.static(opts.root));
+  router.use(express.static(opts.out));
 
   var rebuild = builder(opts);
 
