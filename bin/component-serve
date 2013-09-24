@@ -37,7 +37,8 @@ var dir = process.cwd();
 app.use('/' + program.out, serve({
   root: dir,
   plugins: plugins,
-  dev: program.dev,
+  out: program.out,
+  dev: program.dev !== false,
   noRequire: program.require === false
 }));
 
