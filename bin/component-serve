@@ -14,6 +14,7 @@ program
   .option('-o, --out <dir>', 'output directory [build]', 'build')
   .option('-u, --use <name>', 'use the given build plugin(s)')
   .option('--no-dev', 'do not build development deps')
+  .option('--no-require', 'exclude require from build.js')
   .parse(process.argv);
 
 // plugins
@@ -36,7 +37,8 @@ var dir = process.cwd();
 app.use('/' + program.out, serve({
   root: dir,
   plugins: plugins,
-  dev: program.dev
+  dev: program.dev,
+  noRequire: program.require === false
 }));
 
 app.use(express.static(dir));
