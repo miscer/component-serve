@@ -20,11 +20,15 @@ $ component serve
 $ component serve -p 3030
 
 # Running on localhost:3000 and output at directory named `out`
-$ component serve -o out
+# Compiled files available on /out/build.js /out/build.css
+$ component serve --out out
 
 # Running on localhost:3000 and use component-styl builder plugin
 $ npm install component-styl --save
 $ component serve --use component-styl
+
+# Running on localhost:3000 and compile build.js without require
+$ component serve --no-require
 ```
 
 ## Programmatic usage
