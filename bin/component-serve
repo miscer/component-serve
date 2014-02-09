@@ -39,7 +39,7 @@ app.use('/' + program.out, serve({
   plugins: plugins,
   out: program.out,
   dev: program.dev !== false,
-  noRequire: program.require === false
+  require: program.require !== false
 }));
 
 app.use(express.static(dir));

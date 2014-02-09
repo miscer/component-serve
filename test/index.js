@@ -12,8 +12,8 @@ describe('component-serve', function() {
     app.use(serve({
       root: __dirname + '/component',
       plugins: [],
-      dev: true,
-      noRequire: false
+      require: true,
+      dev: true
     }));
   });
 
@@ -24,6 +24,7 @@ describe('component-serve', function() {
       .expect(/contents of component index\.js/)
       .expect(/contents of component foobar\.js/)
       .expect(/contents of foo-bar index\.js/)
+      .expect(/require.resolve/)
       .end(done);
   });
 

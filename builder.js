@@ -14,7 +14,7 @@ module.exports = function(opts) {
     builder.build(function(err, obj) {
       if (err) return next(err);
 
-      res.locals.js = opts.noRequire ? obj.js : obj.require + obj.js;
+      res.locals.js = opts.require ? obj.require + obj.js : obj.js;
       res.locals.css = obj.css;
 
       next();
