@@ -9,7 +9,7 @@
     "component-serve": "./bin/component-serve"
   },
   "dependencies": {
-    "component-builder": "~0.12.0",
+    "component-builder": "~0.11.2",
     "express": "~3.4.8",
     "commander": "~2.1.0",
     "temporary": "0.0.6"
