@@ -1,0 +1,16 @@
+{
+  "name": "foo",
+  "dependencies": {
+    "foo/bar": "*"
+  },
+  "scripts": [
+    "index.js",
+    "foobar.js"
+  ],
+  "styles": [
+    "style.css"
+  ],
+  "images": [
+    "image.png"
+  ]
+}

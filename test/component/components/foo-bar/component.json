@@ -1,0 +1,7 @@
+{
+  "name": "bar",
+  "repo": "foo/bar",
+  "scripts": [
+    "index.js"
+  ]
+}
